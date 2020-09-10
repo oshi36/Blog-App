@@ -1,0 +1,32 @@
+{
+  "name": "blog",
+  "version": "1.0.0",
+  "description": "",
+  "main": "server.js",
+
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "build":"cd test && npm run build",
+    "install-test":"cd test && npm run build",
+    "heroku-postbuild":"npm run install-test && npm run build",
+    "server":"nodemon",
+    "client":"npm start --prefix test",
+    "start": "nodemon server.js",
+    "serve": "nodemon server.js",
+    "dev":"concurrently \"npm run server\" \"npm run test\""
+  },
+  "author": "Oshi Gupta",
+  "license": "ISC",
+  "dependencies": {
+    "axios": "^0.20.0",
+    "cors": "^2.8.5",
+    "dotenv": "^8.2.0",
+    "express": "^4.17.1",
+    "mongoose": "^5.10.3",
+    "morgan": "^1.10.0"
+  },
+  "devDependencies": {
+    "concurrently": "^5.3.0",
+    "nodemon": "^2.0.4"
+  }
+}
